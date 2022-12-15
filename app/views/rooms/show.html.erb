@@ -1,4 +1,5 @@
 <p style="color: green"><%= notice %></p>
+<%= turbo_stream_from @room %>
 <%= turbo_frame_tag "room" do  %>
   <p>
     <%= render @room %>
