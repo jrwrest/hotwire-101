@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+<%= turbo_frame_tag "room" do  %>
+  <p>
+    <%= render @room %>
+  </p>
+  <p>
+    <%= link_to "Edit this room", edit_room_path(@room) %> |
+    <%= link_to "Back to rooms", rooms_path %>
+    <%= button_to "Destroy this room", @room, method: :delete %>
+  </p>
+<% end %>
+<div id="message">
+  <%= render @room.messages %>
+</div>
+<%= turbo_frame_tag "new_message",src: new_room_message_path(@room), target: "_top"  %>
